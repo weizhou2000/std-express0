@@ -9,8 +9,14 @@ app.get('/', function (req, res) {
 app.listen(3000)
 */
 
-import ExpressSvr from './class/ExpressSvr'
+import ExpressSvr from './class/ExpressSvr1'
 
-let svr=new ExpressSvr();
-svr.get('/',(q,s)=>s.send('h'));
-svr.start(3000);
+//let svr=new ExpressSvr();
+//svr.get('/',(q,s)=>s.send('h'));
+//svr.start(3000);
+
+ExpressSvr
+.init()
+.get('/',(q,s)=>s.send('h'))
+.start(3000);
+
