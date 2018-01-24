@@ -1,14 +1,16 @@
-import { createServer } from 'http';
-import express from 'express';
-import config from 'config'
-import mysql from 'mysql';
-import { graphqlExpress} from 'apollo-server-express';
-import bodyParser from 'body-parser';
-import kue from 'kue'
+/*
+var express = require('express')
+var app = express()
 
-//import Ali from '../std-util/lib/util/'
-import {tip} from '../../std-util/lib/util/winston'
+app.get('/', function (req, res) {
+  res.send('Hello World')
+})
 
-console.log('111')
+app.listen(3000)
+*/
 
-export const abc=1234
+import ExpressSvr from './class/ExpressSvr'
+
+let svr=new ExpressSvr();
+svr.get('/',(q,s)=>s.send('h'));
+svr.start(3000);
